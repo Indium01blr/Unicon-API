@@ -9,7 +9,7 @@ namespace Unicorn_Trade_api.Services
 {
     public class DBWrapper
     {
-        string connectionstring = "server=IND-CHN-LTA3807;Database=root;password=root;Integrated security=false";//ConfigurationManager.
+        string connectionstring = "server=.;Database=root;password=root;Integrated security=false";//ConfigurationManager.
        
         public DataTable  Getusers()
         {

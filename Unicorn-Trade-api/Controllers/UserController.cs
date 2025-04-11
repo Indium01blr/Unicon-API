@@ -1,6 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Unicorn_Trade_api.Models;
 using Unicorn_Trade_api.Services;
+using System.Linq;
+using System;
 
 
 namespace Unicorn_Trade_api.Controllers
@@ -10,12 +12,11 @@ namespace Unicorn_Trade_api.Controllers
     public class UserController(UserService userService) : ControllerBase
     {
 
-        [HttpGet(Name = "GetUser(name)")]
-        public User GetUser(string name)
+        [Route("GetUserDetails/{name}")]
+        [HttpGet]
+        public IActionResult GetUser(string name)
         {
-            var response =  userService.GetUser(name);
-
-            return response;
+            return (IActionResult)userService.GetUser(name);
         }
 
     }
